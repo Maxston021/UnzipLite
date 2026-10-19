@@ -67,7 +67,7 @@ final class FileHideManager {
 
         // 首次启动时，如果隐藏开关已开启，执行一次迁移
         if isHidingInFilesApp && !defaults.bool(forKey: kHasMigratedInitialFiles) {
-            migrateToHidden()
+            try? migrateToHidden()
             defaults.set(true, forKey: kHasMigratedInitialFiles)
         }
     }

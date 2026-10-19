@@ -145,7 +145,8 @@ class FileBrowserViewController: UIViewController {
             self?.presentNewFolderAlert()
         }
         let menu = UIMenu(title: "", children: [importAction, folderAction])
-        let moreButton = UIBarButtonItem(image: UIImage(systemName: "plus"), menu: menu)
+        let moreButton = UIBarButtonItem(title: "＋", style: .plain, target: self, action: #selector(showAddMenu))
+        moreButton.menu = menu
         navigationItem.rightBarButtonItem = moreButton
 
         // 大标题
@@ -357,5 +358,24 @@ extension FileBrowserViewController: UIDocumentPickerDelegate {
                 self?.showToast("已导入 \(successCount) 个文件")
             }
         }
+    }
+}
+
+// MARK: - Actions
+
+extension FileBrowserViewController {
+    @objc private func showAddMenu() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "导入文件", style: .default) { [weak self] _ in
+            self?.presentDocumentPicker()
+        })
+        alert.addAction(UIAlertAction(title: "新建文件夹", style: .default) { [weak self] _ in
+            self?.presentNewFolderAlert()
+        })
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        if let popover = alert.popoverPresentationController {
+            popover.barButtonItem = navigationItem.rightBarButtonItem
+        }
+        present(alert, animated: true)
     }
 }

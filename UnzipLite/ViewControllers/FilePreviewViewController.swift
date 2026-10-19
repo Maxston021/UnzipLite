@@ -106,9 +106,13 @@ class FilePreviewViewController: UIViewController {
         textView.font = .systemFont(ofSize: 14)
         textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
-        if let data = try? Data(contentsOf: fileItem.url),
-           let text = String(data: data, encoding: .utf8) ?? String(data: data, encoding: .gbk) {
-            textView.text = text
+        if let data = try? Data(contentsOf: fileItem.url) {
+            let gbkEncoding = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue)))
+            if let text = String(data: data, encoding: .utf8) ?? String(data: data, encoding: gbkEncoding) {
+                textView.text = text
+            } else {
+                textView.text = "无法读取文件内容"
+            }
         } else {
             textView.text = "无法读取文件内容"
         }
