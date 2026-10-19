@@ -63,6 +63,7 @@
 				8E9BC98F090F418EA77F2C1E /* Info.plist */,
 				F855529C32F84EF88C6772D4 /* Products */,
 			);
+			path = UnzipLite;
 			sourceTree = "<group>";
 		};
 		F855529C32F84EF88C6772D4 /* Products */ = {
