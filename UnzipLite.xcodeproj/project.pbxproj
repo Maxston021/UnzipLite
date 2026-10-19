@@ -34,7 +34,7 @@
 		58578061D48F49CB98BE021B /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileCell.swift"; sourceTree = "<group>"; };
 		8E9BC98F090F418EA77F2C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
 		204017A72A8F4DFC9FE0ED8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
-		D29F35A89C9C48BC938BA27E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "LaunchScreen.storyboard"; path = "Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		D29F35A89C9C48BC938BA27E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "LaunchScreen.storyboard"; path = "LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		66D70F1D377140539445130C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
